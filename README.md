@@ -1,0 +1,1 @@
+# Glaze-WM-Config
