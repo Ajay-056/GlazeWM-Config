@@ -198,8 +198,7 @@ window_rules:
   - command: "ignore"
     match_title: "neovide"
 
-  # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
-  # - command: "set floating"
+  # Ignores tiling/floating for system dialogs by default (eg. File Explorer save/open dialog).
   - command: "ignore"
     match_class_name: "#32770"
 
