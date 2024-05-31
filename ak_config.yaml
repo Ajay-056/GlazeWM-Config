@@ -60,7 +60,7 @@ gaps:
   inner_gap: "5px"
 
   # Gap between windows and the screen edge.
-  outer_gap: 0 
+  outer_gap: "0px"
 
 # Highlight active/inactive windows with a colored border.
 # ** Exclusive to Windows 11 due to API limitations.
@@ -105,19 +105,41 @@ bar:
       padding: "0 8px 0 4px"
 
     - type: "workspaces"
-      focused_workspace_background: *green 
+      focused_workspace_background: "#ff4500" 
       focused_workspace_foreground: "#000000"
       displayed_workspace_background: *surface0
       padding: 0 
     
-  # components_center:
+  components_center:
+    - type: "clock"
+      time_formatting: "hh:mm:ss tt  ddd-MMM-d"
+      font_size: 15
+      foreground: "white"
+      # Documentation on formatting date/time string:
+      # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
   #   - type: "window title"
+  #     border_width: 1
+  #     border_color: "#000fff"
+      # title_length: 20
+    # - type: "music"
+    #   label_not_playing: ""
+    #   label_paused: " {song_title}"
+    #   label_playing: "  {song_title} - {artist_name}"
+    #   max_title_length: 20
+      # max_artist_length: 20 
 
   components_right:
     - type: "system tray"
       label_expand_text: "<"
       label_collapse_text: ">"
-
+    # - type: "network"
+    #   label_no_internet: "NC"
+    #   label_ethernet: "Eth"
+    #   label_wifi_strength0: "WiFi: 0%"
+    #   label_wifi_strength25: "WiFi: 25%"
+    #   label_wifi_strength50: "WiFi: 50%"
+    #   label_wifi_strength75: "WiFi: 75%"
+    #   label_wifi_strength100: "WiFi: 100%"
     - type: "volume"
       label_low: " {volume_level}%"
       label_medium: " {volume_level}%"
@@ -128,50 +150,42 @@ bar:
       label: "  {percent_usage}%"
       refresh_interval_ms: 5000
 
+    # - type: "gpu"
+    #   label: "GPU: {percent_usage}%"
+    #   refresh_interval_ms: 5000
+    
     - type: "memory"
       label: "  {percent_usage}%"
       refresh_interval_ms: 5000
     
     - type: "battery"
-      label_draining: "🔋{battery_level}%"
-      label_power_saver: "󱉞 {battery_level}%"
-      label_charging: "󰂄 {battery_level}%"
+      label_draining: "<attr fg='#ffa500'>🔋{battery_level}%</attr>"
+      label_power_saver: "<attr fg='#ff4500'>󱉞 {battery_level}%</attr>"
+      label_charging: "<attr fg='#33ff57'>⚡ {battery_level}%</attr>"
     
-    - type: "clock"
-      # Documentation on formatting date/time string:
-      # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-      time_formatting: "hh:mm:ss tt  ddd-MMM-d"
 
 workspaces:
   - name: "1"
     display_name: " Home" 
     keep_alive: true
-
   - name: "2"
     display_name: " Term"
     keep_alive: true
-
   - name: "3"
     display_name: "🦁 Brave"
     keep_alive: true
-
   - name: "4"
     display_name: "📂 Exp"
     keep_alive: true
-
   - name: "5"
     display_name: "󰫔 Music"
-
   - name: "6"
     display_name: "󰨞 Code"
     keep_alive: true
-
   - name: "7"
     display_name: "🗿 Others"
-
   - name: "8"
     display_name: ""
-
   - name: "9"
     display_name: ""
 
@@ -192,13 +206,16 @@ window_rules:
   - command: "move to workspace 6"
     match_process_name: "Code"
 
+  # Task Manager requires admin privileges to manage and should be ignored unless running
+  # the WM as admin.
   - command: "ignore"
     match_process_name: "/Taskmgr|ScreenClippingHost/"
 
   - command: "ignore"
     match_title: "neovide"
 
-  # Ignores tiling/floating for system dialogs by default (eg. File Explorer save/open dialog).
+  # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
+  # - command: "set floating"
   - command: "ignore"
     match_class_name: "#32770"
 
