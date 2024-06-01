@@ -75,7 +75,7 @@ focus_borders:
 
 bar:
   enabled: true
-  height: "28px"
+  height: "31px"
   position: "top"
   opacity: 1.0
   background: "#2b2b2b"
@@ -83,32 +83,35 @@ bar:
   font_family: "CaskaydiaCove Nerd Font Bold"
   font_size: "13px"
   padding: "6px 8px"
-  offset_x: "0"
-  offset_y: "0"
+  offset_x: "7"
+  offset_y: "7"
+  border_width: "2px"
+  border_radius: 13
+  border_color: *green
 
   component_separator:
       label: " ⁝ "
 
   components_left:
     - type: "tiling direction"
-      label_horizontal: ""
-      label_vertical: ""
+      label_horizontal: " "
+      label_vertical: " "
       background: "#33FF57"
       foreground: "#000000"
-      margin: "0"
-      padding: "0 8px 0 5px"
+      padding: "0 5px"
 
     - type: "binding mode"
       background: "#33FF57" 
       foreground: "#000000"
       margin: "0"
-      padding: "0 8px 0 4px"
+      padding: "0 5px"
 
     - type: "workspaces"
-      focused_workspace_background: "#ff4500" 
       focused_workspace_foreground: "#000000"
-      displayed_workspace_background: *surface0
-      padding: 0 
+      focused_workspace_background: "#ff4500" 
+      default_workspace_foreground: "white"
+      default_workspace_background: "black"
+      padding: 0
     
   components_center:
     - type: "clock"
@@ -166,7 +169,7 @@ bar:
 
 workspaces:
   - name: "1"
-    display_name: " Home" 
+    display_name: " Home"
     keep_alive: true
   - name: "2"
     display_name: " Term"
@@ -179,6 +182,7 @@ workspaces:
     keep_alive: true
   - name: "5"
     display_name: "󰫔 Music"
+    # display_name: "  Spotify"
   - name: "6"
     display_name: "󰨞 Code"
     keep_alive: true
@@ -217,7 +221,7 @@ window_rules:
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   # - command: "set floating"
   - command: "ignore"
-    match_class_name: "#32770"
+    match_class_name: "/#32770|OperationStatusWindow/"
 
   # Do not manage picture-in-picture windows for browsers. Note that the default is for
   # English; change `match_title` to the window's title if you use another language.
@@ -230,7 +234,7 @@ window_rules:
     match_process_name: "steam"
 
 binding_modes:
-  - name: "󰆾"
+  - name: "󰆾."
     keybindings:
       # Resize focused window by a percentage or pixel amount.
       - command: "resize width -2%"
@@ -268,7 +272,7 @@ keybindings:
 
   # As an alternative to the resize keybindings above, resize mode enables resizing via
   # HJKL or arrow keys. The binding mode is defined above with the name "resize".
-  - command: "binding mode 󰆾"
+  - command: "binding mode 󰆾."
     binding: "Alt+C"
 
   # Change tiling direction. This determines where new tiling windows will be inserted.
