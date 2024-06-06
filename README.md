@@ -4,6 +4,8 @@
 
 Pro / Nerd Level configuration for which I have spent a lot of time. Hope its awesome to use !!
 
+Take a look at my other configs and dots here <https://github.com/Ajay-056/My-Dot-Files>
+
 **Pro-tips:** 
 - Run Glaze WM as administrator to make sure all the features are enabled without any issues.
 - Use Task shell:startup / Task Scheduler to run the executable automatically at the login.
