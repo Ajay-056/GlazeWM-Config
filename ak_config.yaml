@@ -42,7 +42,7 @@ general:
   toggle_workspace_on_refocus: true
 
   # Whether to show floating windows as always on top.
-  show_floating_on_top: false
+  show_floating_on_top: true
 
   # Amount to move floating windows by (eg. when using `alt+<hjkl>` on a floating window)
   floating_window_move_amount: "5%"
@@ -84,14 +84,13 @@ bar:
   font_size: "13px"
   padding: "6px 8px"
   offset_x: "7"
-  offset_y: "7"
+  offset_y: "6"
   border_width: "2px"
   border_radius: 13
   border_color: *green
 
   component_separator:
       label: " ⁝ "
-
   components_left:
     - type: "tiling direction"
       label_horizontal: " "
@@ -182,10 +181,10 @@ workspaces:
     keep_alive: true
   - name: "5"
     display_name: "󰫔 Music"
+    # display_name: "🎵 Spotify"
     # display_name: "  Spotify"
   - name: "6"
     display_name: "󰨞 Code"
-    keep_alive: true
   - name: "7"
     display_name: "🗿 Others"
   - name: "8"
@@ -195,20 +194,36 @@ workspaces:
 
 window_rules:
 
+  # - command: "move to workspace 3"
+  # - commands: ["move to workspace 2", "focus workspace 2"]
   - command: "move to workspace 2"
     match_process_name: "WindowsTerminal"
 
+  # - commands: ["move to workspace 3", "focus workspace 3"]
   - command: "move to workspace 3"
     match_process_name: "brave"
  
-  - command: "move to workspace 4"
-    match_process_name: "explorer"
+  # - commands: ["move to workspace 4", "focus workspace 4"]
+  # - command: "move to workspace 4"
+  #   match_process_name: "explorer"
 
+  # - commands: ["move to workspace 5", "focus workspace 5"]
   - command: "move to workspace 5"
     match_process_name: "Spotify"
 
+  # - commands: ["move to workspace 6", "focus workspace 6"]
   - command: "move to workspace 6"
     match_process_name: "Code"
+
+  - command: "move to workspace 7"
+    match_process_name: "ApplicationFrameHost"
+
+  # - command: "ignore"
+  #   match_process_name: "Spotify"
+
+  # - command: "move to workspace 3"
+  #   match_process_name: "brave" 
+
 
   # Task Manager requires admin privileges to manage and should be ignored unless running
   # the WM as admin.
@@ -220,8 +235,9 @@ window_rules:
 
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   # - command: "set floating"
-  - command: "ignore"
+  - command: "set floating"
     match_class_name: "/#32770|OperationStatusWindow/"
+    # match_class_name: "#32770"
 
   # Do not manage picture-in-picture windows for browsers. Note that the default is for
   # English; change `match_title` to the window's title if you use another language.
@@ -270,6 +286,16 @@ keybindings:
   - command: "move down"
     bindings: ["Alt+Shift+Down"]
 
+  # Resize focused window by a percentage or pixel amount.
+  # - command: "resize width -2%"
+  #   binding: "Alt+H"
+  # - command: "resize width +2%"
+  #   binding: "Alt+L"
+  # - command: "resize height +2%"
+  #   binding: "Alt+J"
+  # - command: "resize height -2%"
+  #   binding: "Alt+K"
+
   # As an alternative to the resize keybindings above, resize mode enables resizing via
   # HJKL or arrow keys. The binding mode is defined above with the name "resize".
   - command: "binding mode 󰆾."
@@ -309,8 +335,8 @@ keybindings:
 
   # Launch CMD terminal (alternatively `exec wt` or `exec %ProgramFiles%/Git/git-bash.exe`
   # to start Windows Terminal and Git Bash respectively.
-  - command: "exec wt"
-    binding: "Alt+Enter"
+  # - command: "exec wt"
+  #   binding: "Alt+Enter"
 
   # Focus the workspace that last had focus.
   - command: "focus workspace recent"
