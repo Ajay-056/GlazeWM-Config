@@ -4,7 +4,9 @@
 
 Pro / Nerd Level configuration for which I have spent a lot of time. Hope its awesome to use !!
 
-Take a look at my other configs and dots here <https://github.com/Ajay-056/My-Dot-Files>
+Take a look at my other configs and dots below 
+- <https://github.com/Ajay-056/My-Dot-Files>
+- <https://github.com/Ajay-056/Obsidian-Config>
 
 **Pro-tips:** 
 - Run Glaze WM as administrator to make sure all the features are enabled without any issues.
