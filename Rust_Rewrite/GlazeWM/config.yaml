@@ -76,18 +76,14 @@ workspaces:
   - name: "2"
     display_name: " Term"
     keep_alive: true
-    # display_name: "💻 Term"
   - name: "3"
-    display_name: "🦁 Brave"
+    display_name: ""
     keep_alive: true
   - name: "4"
     display_name: "📂 Exp"
     keep_alive: true
-    # display_name: "📁 Exp"
   - name: "5"
     display_name: "󰫔 Music"
-    # display_name: "🎵 Spotify"
-    # display_name: "  Spotify"
   - name: "6"
     display_name: "󰨞 Code"
     keep_alive: true
@@ -129,7 +125,7 @@ window_rules:
 
   - commands: ["move --workspace 3", "focus --workspace 3"]
     match:
-      - window_process: { equals: "brave" }
+      - window_process: { equals: "chrome" }
 
   - commands: ["move --workspace 4", "focus --workspace 4"]
     match:
