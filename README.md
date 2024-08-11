@@ -1,14 +1,20 @@
 # Glaze-WM-Config (⭐Star the Repository if you like or clone it 😃)
 
+**Old Version:**
 ![image](https://github.com/Ajay-056/Glaze-WM-Config/assets/40629789/df28ef97-8380-44f5-8cbf-6e176b19a355)
+
+**Rust Rewrite - New Version (Zebar):**
+![alt text](image.png)
 
 Pro / Nerd Level configuration for which I have spent a lot of time. Hope its awesome to use !!
 
-Take a look at my other configs and dots below 
+Take a look at my other configs and dots below
+
 - <https://github.com/Ajay-056/My-Dot-Files>
 - <https://github.com/Ajay-056/Obsidian-Config>
 
-**Pro-tips:** 
+**Pro-tips:**
+
 - Run Glaze WM as administrator to make sure all the features are enabled without any issues.
 - Use Task shell:startup / Task Scheduler to run the executable automatically at the login.
 - Use a Nerd Font to ensure all the icons and glyphs render properly. Download your favourite font from here <https://www.nerdfonts.com/font-downloads>. My Favourite one is Cascaydia Code.
