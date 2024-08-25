@@ -16,7 +16,7 @@ Take a look at my other configs and dots below
 **Pro-tips:**
 
 - Run Glaze WM as administrator to make sure all the features are enabled without any issues.
-- Use Task shell:startup / Task Scheduler to run the executable automatically at the login.
-- Use a Nerd Font to ensure all the icons and glyphs render properly. Download your favourite font from here <https://www.nerdfonts.com/font-downloads>. My Favourite one is Cascaydia Code.
-- Hide Your Task bar to freeup some unwanted space since taskbar is replaced by glaze WM bar.
+- Use shell:startup / Task Scheduler to run the executable automatically at the login.
+- Use a Nerd Font to ensure all the icons and glyphs render properly. Download your favourite font from here <https://www.nerdfonts.com/font-downloads>.
+- Hide Your Task bar to freeup some unwanted space since taskbar is replaced by glaze WM bar / Zebar.
 - Use GlazeWM alongside Powertoys Run (To mimic like dmenu or rofi) <https://github.com/microsoft/PowerToys>
