@@ -255,26 +255,3 @@ window/bar:
         @else if (battery.chargePercent > 20 && battery.state === "discharging") {<i class="nf nf-fa-battery_1 orange"></i> <span class="orange">{{ Math.round(battery.chargePercent) }}%</span>}
         @else if (battery.chargePercent < 20 && battery.state === "discharging") {<i class="nf nf-fa-battery_0"></i>  <span class="red">{{ Math.round(battery.chargePercent) }}%</span>}
         @else {<i class="nf nf-fa-battery_4 green"></i> <span class="green">{{ Math.round(battery.chargePercent) }}%</span>}
-
-    template/weather:
-      providers: ["weather"]
-
-      styles: |
-        color: yellow;
-
-      template: |
-        @switch (weather.status) {
-          @case ('clear_day') {<i class="nf nf-weather-day_sunny"></i>}
-          @case ('clear_night') {<i class="nf nf-weather-night_clear"></i>}
-          @case ('cloudy_day') {<i class="nf nf-weather-day_cloudy"></i>}
-          @case ('cloudy_night') {<i class="nf nf-weather-night_alt_cloudy"></i>}
-          @case ('light_rain_day') {<i class="nf nf-weather-day_sprinkle"></i>}
-          @case ('light_rain_night') {<i class="nf nf-weather-night_alt_sprinkle"></i>}
-          @case ('heavy_rain_day') {<i class="nf nf-weather-day_rain"></i>}
-          @case ('heavy_rain_night') {<i class="nf nf-weather-night_alt_rain"></i>}
-          @case ('snow_day') {<i class="nf nf-weather-day_snow"></i>}
-          @case ('snow_night') {<i class="nf nf-weather-night_alt_snow"></i>}
-          @case ('thunder_day') {<i class="nf nf-weather-day_lightning"></i>}
-          @case ('thunder_night') {<i class="nf nf-weather-night_alt_lightning"></i>}
-        }
-        {{ weather.celsiusTemp }}°
