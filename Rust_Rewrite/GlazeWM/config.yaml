@@ -3,10 +3,14 @@ general:
   # another application). Here we are running a batch script to start Zebar.
   startup_commands:
     [
- 
-       "shell-exec %userprofile%/.glzr/zebar/start.bat"
+      "shell-exec zebar",
+      "shell-exec C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+      "shell-exec C:\\Users\\rajay\\AppData\\Local\\Programs\\obsidian\\Obsidian.exe",
+    ]
 
-  ]
+  # Commands to run just before the WM is shutdown.
+  # Example: The below command kills Zebar.
+  shutdown_commands: ["shell-exec taskkill /IM zebar.exe /F"]
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: true
@@ -25,12 +29,13 @@ general:
     trigger: "window_focus"
 
 gaps:
+  scale_with_dpi: true
   # Gap between adjacent windows.
   inner_gap: "5px"
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: "60px"
+    top: "45px"
     right: "0px"
     bottom: "0px"
     left: "0px"
@@ -44,11 +49,20 @@ window_effects:
       enabled: true
       color: "#ff4500"
 
+  corner_style:
+    enabled: false
+    # Allowed values: 'square', 'rounded', 'small_rounded'.
+    style: "rounded"
+
   # Visual effects to apply to non-focused windows.
   other_windows:
     border:
       enabled: true
       color: "#0000ff"
+    corner_style:
+      enabled: false
+      # Allowed values: 'square', 'rounded', 'small_rounded'.
+      style: "rounded"
 
 window_behavior:
   # New windows are created in this state whenever possible.
@@ -116,9 +130,14 @@ window_rules:
         window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
 
       # Ignore rules for various 3rd-party apps.
-      - window_process: { equals: "PowerToys.PowerAccent" }
+      - window_process: { equals: "PowerToys" }
+        window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+      - window_process: { equals: "PowerToys" }
+        window_title: { regex: ".*? - Peek" }
       - window_process: { equals: "Lively" }
-        window_class: { regex: "HwndWrapper*" }
+        window_class: { regex: "HwndWrapper" }
+
+      - window_title: { equals: "neovide" }
 
       - window_class: { regex: "#32770" }
 
@@ -130,34 +149,33 @@ window_rules:
 
   - commands: ["move --workspace 1", "focus --workspace 1"]
     match:
-      - window_process: { equals: "" }
+      - window_process: { equals: "Obsidian" }
 
   - commands: ["move --workspace 2", "focus --workspace 2"]
     match:
-      - window_process: { equals: "" }
+      - window_process: { equals: "WindowsTerminal" }
 
   - commands: ["move --workspace 3", "focus --workspace 3"]
     match:
-      - window_process: { equals: "" }
+      - window_process: { equals: "brave" }
 
   - commands: ["move --workspace 4", "focus --workspace 4"]
     match:
-      - window_process: { equals: "" }
+      - window_process: { equals: "explorer" }
 
   - commands: ["move --workspace 5", "focus --workspace 5"]
     match:
-      - window_process: { equals: "" }
+      - window_process: { equals: "Spotify" }
 
   - commands: ["move --workspace 6", "focus --workspace 6"]
     match:
-      - window_process: { equals: "" }
+      - window_process: { equals: "Code" }
 
   - commands: ["move --workspace 7", "focus --workspace 7"]
     match:
-      - window_title: { equals: "" }
-      - window_title: { equals: "" }
-      - window_title: { equals: "" }
-
+      - window_title: { equals: "Settings" }
+      - window_title: { equals: "Microsoft Store" }
+      - window_title: { equals: "HP Support Assistant" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.

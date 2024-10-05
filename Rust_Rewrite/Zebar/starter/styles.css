@@ -1,0 +1,173 @@
+/**
+ * Import the Nerdfonts icon font.
+ * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
+ */
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+i {
+  /* color: rgb(115 130 175 / 95%); */
+  margin-right: 8px;
+}
+
+body {
+  color: rgb(255 255 255 / 90%);
+  overflow: hidden;
+  font-size: 13px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@keyframes flash {
+  from { opacity: 1.0; }
+  50% { opacity: 0.5; }
+  to { opacity: 1.0; }
+}
+
+#root {
+  border-bottom: 1px solid rgb(255 255 255 / 5%);
+  background: linear-gradient(rgb(0 0 0 / 90%), rgb(5 2 20 / 85%));
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  align-items: center;
+  height: 100%;
+  font-family: CaskaydiaCove Nerd Font SemiBold, monospace;
+  padding: 5px 8px;
+  background: #2b2b2b;
+  border: 2px solid lightgreen;
+  border-radius: 13px;
+}
+
+.left,
+.center,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  justify-self: end;
+  font-size: 14px;
+}
+
+.right {
+  justify-content: end;
+}
+
+.logo,
+.binding-mode,
+.tiling-direction,
+.network,
+.memory,
+.cpu {
+  margin-right: 15px;
+}
+
+.network,
+.memory,
+.cpu,
+.battery,
+.weather {
+  background: rgb(255 255 255 / 7%);
+  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+}
+
+.workspaces {
+  display: flex;
+  align-items: center;
+}
+
+.workspace {
+  background: rgb(255 255 255 / 6%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+
+  &.displayed {
+    background: rgb(255 255 255 / 15%);
+  }
+
+  &.focused,
+  &:hover {
+    background: yellow;
+    color: black;
+    border: 1px solid red;
+  }
+}
+
+.workspace:not(:nth-child(7)) {
+  margin-right: 15px;
+}
+
+.binding-mode,
+.tiling-direction {
+  background: rgb(255 255 255 / 15%);
+  color: rgb(255 255 255 / 90%);
+  border-radius: 10px;
+  line-height: 1;
+  padding: 4px 5px;
+  border: 0;
+  cursor: pointer;
+}
+
+.binding-mode {
+  margin-right: 4px;
+}
+
+.orange {
+  color: #ffa500;
+}
+
+.red {
+  color: #ff4500;
+}
+
+.green {
+  color: #33ff57;
+}
+
+.cpu {
+  color: #1e90ff;
+}
+
+.cpu .high-usage {
+  color: #900029;
+  animation: flash 0.5s infinite;
+}
+
+.memory {
+  color: violet;
+}
+
+.memory .high-usage {
+  color: #900029;
+  animation: flash 0.5s infinite;
+}
+
+.battery {
+  position: relative;
+  /* color: #ffa500; */
+}
+
+.battery .charging-icon {
+  position: absolute;
+  font-size: 8px;
+  left: 1px;
+  top: 3px;
+  color: rgb(255, 60, 0);
+}
+
+.weather {
+  color: yellow;
+}
