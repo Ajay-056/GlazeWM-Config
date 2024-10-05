@@ -39,6 +39,9 @@
         battery: { type: 'battery' },
         memory: { type: 'memory' },
         weather: { type: 'weather' },
+        host: { type: 'host' },
+        ip: { type: 'ip' },
+        
       });
 
       createRoot(document.getElementById('root')).render(<App />);
@@ -49,6 +52,19 @@
         useEffect(() => {
           providers.onOutput(() => setOutput(providers.outputMap));
         }, []);
+
+      function msToTime(duration) {
+        var milliseconds = Math.floor((duration % 1000) / 100),
+          seconds = Math.floor((duration / 1000) % 60),
+          minutes = Math.floor((duration / (1000 * 60)) % 60),
+          hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+
+        hours = (hours < 10) ? "0" + hours : hours;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+        return hours + "h:" + minutes + "m";
+      }
 
         // Get icon to show for current network status.
         function getNetworkIcon(networkOutput) {
@@ -171,7 +187,6 @@
               {output.network && (
                 <div className="network">
                   {getNetworkIcon(output.network)}
-                  {output.network.defaultGateway?.ssid}
                 </div>
               )}
 
@@ -183,7 +198,7 @@
                   <span
                     className={output.cpu.usage > 85 ? 'high-usage' : ''}
                   >
-                    {Math.round(output.cpu.usage)}%
+                    {Math.round(output.cpu.usage)}% 
                   </span>
                 </div>
               )}
@@ -209,6 +224,23 @@
                   <span style={{color: output.battery.chargePercent < 20 ? "red" : output.battery.chargePercent > 90 ? "#33ff57" : "orange"}}>{Math.round(output.battery.chargePercent)}%</span>
                 </div> 
               )}
+
+
+              {output.battery && (
+                <div className="cycle_count">
+                <i className="nf-md-repeat"></i>
+                  {output.battery.cycleCount}
+                </div> 
+              )}
+
+
+              {output.host && (
+                <div className="uptime">
+                  {msToTime(output.host.uptime)}
+                </div> 
+              )}
+
+
             </div>
           </div>
         );

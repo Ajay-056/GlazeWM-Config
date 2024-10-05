@@ -65,11 +65,15 @@ body,
 .tiling-direction,
 .network,
 .memory,
-.cpu {
-  margin-right: 15px;
+.cpu,
+.cycle_count,
+.battery {
+  margin-right: 11px;
 }
 
 .network,
+.cycle_count,
+.uptime,
 .memory,
 .cpu,
 .battery,
@@ -166,6 +170,14 @@ body,
   left: 1px;
   top: 3px;
   color: rgb(255, 60, 0);
+}
+
+.cycle_count {
+  color: lightgreen;
+}
+
+.uptime {
+  color: yellow;
 }
 
 .weather {
