@@ -10,7 +10,11 @@ general:
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
-  shutdown_commands: ["shell-exec taskkill /IM zebar.exe /F"]
+  shutdown_commands: [
+    "shell-exec taskkill /IM zebar.exe /F",
+    "shell-exec taskkill /IM PowerToys.exe /F",
+    "shell-exec taskkill /IM ExplorerTabUtility.exe /F",
+    ]
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: true

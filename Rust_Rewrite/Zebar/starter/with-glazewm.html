@@ -66,6 +66,10 @@
         return hours + "h:" + minutes + "m";
       }
 
+      function bytesToMegabytes(bytes) {
+        return (bytes / (1024 * 1024)).toFixed(1);
+      }
+
         // Get icon to show for current network status.
         function getNetworkIcon(networkOutput) {
           switch (networkOutput.defaultInterface?.type) {
@@ -73,7 +77,7 @@
               return <i className="nf nf-md-ethernet_cable"></i>;
             case 'wifi':
               if (networkOutput.defaultGateway?.signalStrength >= 80) {
-                return <i className="nf nf-md-wifi_strength_4"></i>;
+                return <span className="nf nf-md-wifi_strength_4"></span>;
               } else if (
                 networkOutput.defaultGateway?.signalStrength >= 65
               ) {
@@ -186,7 +190,13 @@
 
               {output.network && (
                 <div className="network">
-                  {getNetworkIcon(output.network)}
+                  {getNetworkIcon(output.network)}&nbsp;
+                  {(output.network.traffic.transmitted.iecValue).toFixed(1)}
+                  {output.network.traffic.transmitted.iecUnit}
+                  /
+                  {(output.network.traffic.received.iecValue).toFixed(1)}
+                  {output.network.traffic.received.iecUnit}
+
                 </div>
               )}
 
