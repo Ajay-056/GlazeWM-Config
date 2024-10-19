@@ -3,18 +3,12 @@ general:
   # another application). Here we are running a batch script to start Zebar.
   startup_commands:
     [
-      "shell-exec zebar",
-      "shell-exec C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
-      "shell-exec C:\\Users\\rajay\\AppData\\Local\\Programs\\obsidian\\Obsidian.exe",
+      "shell-exec zebar"
     ]
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
-  shutdown_commands: [
-    "shell-exec taskkill /IM zebar.exe /F",
-    "shell-exec taskkill /IM PowerToys.exe /F",
-    "shell-exec taskkill /IM ExplorerTabUtility.exe /F",
-    ]
+  shutdown_commands: []
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: true
@@ -153,7 +147,7 @@ window_rules:
 
   - commands: ["move --workspace 1", "focus --workspace 1"]
     match:
-      - window_process: { equals: "Obsidian" }
+      - window_process: { equals: "" }
 
   - commands: ["move --workspace 2", "focus --workspace 2"]
     match:
@@ -161,7 +155,7 @@ window_rules:
 
   - commands: ["move --workspace 3", "focus --workspace 3"]
     match:
-      - window_process: { equals: "brave" }
+      - window_process: { equals: "" }
 
   - commands: ["move --workspace 4", "focus --workspace 4"]
     match:
@@ -179,7 +173,7 @@ window_rules:
     match:
       - window_title: { equals: "Settings" }
       - window_title: { equals: "Microsoft Store" }
-      - window_title: { equals: "HP Support Assistant" }
+      - window_title: { equals: "" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
