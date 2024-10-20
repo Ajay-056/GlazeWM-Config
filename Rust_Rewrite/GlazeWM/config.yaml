@@ -109,7 +109,7 @@ workspaces:
     # display_name: "  Spotify"
   - name: "6"
     display_name: "󰨞 Code"
-    keep_alive: true
+    #keep_alive: true
   - name: "7"
     display_name: "🗿"
   - name: "8"
