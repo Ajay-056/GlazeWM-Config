@@ -54,6 +54,7 @@ body,
 .center {
   justify-self: end;
   font-size: 14px;
+  margin-right: 5px;
 }
 
 .right {
@@ -85,6 +86,21 @@ body,
   justify-content: space-between;
   border-radius: 30px;
 }
+
+.btn{
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.btn1{
+  border: none;
+  background: transparent;
+  color: violet;
+  cursor: pointer;
+}
+
 
 .workspaces {
   display: flex;

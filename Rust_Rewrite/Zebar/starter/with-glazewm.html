@@ -32,14 +32,14 @@
       import * as zebar from 'https://esm.sh/zebar@2';
 
       const providers = zebar.createProviderGroup({
-        network: { type: 'network' },
+        network: { type: 'network', refreshInterval: '2000'},
         glazewm: { type: 'glazewm' },
-        cpu: { type: 'cpu' },
+        cpu: { type: 'cpu', refreshInterval: '2000' },
         date: { type: 'date', formatting: 'EEE	dd MMM hh:mm:ss a' },
-        battery: { type: 'battery' },
-        memory: { type: 'memory' },
+        battery: { type: 'battery', refreshInterval: '2000'},
+        memory: { type: 'memory', refreshInterval: '2000'},
         weather: { type: 'weather' },
-        host: { type: 'host' },
+        host: { type: 'host', refreshInterval: '5000'},
         ip: { type: 'ip' },
         
       });
@@ -165,7 +165,12 @@
               )}
             </div>
 
-            <div className="center">{output.date?.formatted}</div>
+            <div className="center">
+                  <button className="btn" onClick={() => { output.glazewm.runCommand('shell-exec %userprofile%/.glzr/zebar/script/OpenActionCenter.vbs')
+          }}>
+                  <span>{output.date?.formatted}</span>
+                  </button>
+            </div>
 
             <div className="right">
               {output.glazewm && (
@@ -215,12 +220,15 @@
 
               {output.memory && (
                 <div className="memory">
+                <button className="btn1" onClick={() => { output.glazewm.runCommand('shell-exec %userprofile%/.glzr/zebar/script/OpenTaskManager.vbs')
+          }}>
                   <i className="nf nf-fae-chip"></i>
                   <span
                     className={output.memory.usage >= 85 ? 'high-usage' : ''}
                   >
                     {Math.round(output.memory.usage)}%
                   </span>
+                  </button>
                 </div>
               )}
 
@@ -231,7 +239,7 @@
                     <i className="nf nf-md-power_plug charging-icon red"></i>
                   )}
                   {getBatteryIcon(output.battery)}
-                  <span style={{color: output.battery.chargePercent < 20 ? "red" : output.battery.chargePercent > 90 ? "#33ff57" : "orange"}}>{Math.round(output.battery.chargePercent)}%</span>
+                  <span style={{color: output.battery.chargePercent < 20 ? "#ff4500" : output.battery.chargePercent > 90 ? "#33ff57" : "orange"}}>{Math.round(output.battery.chargePercent)}%</span>
                 </div> 
               )}
 
