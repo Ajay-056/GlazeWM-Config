@@ -4,7 +4,7 @@
 ![image](https://github.com/Ajay-056/Glaze-WM-Config/assets/40629789/df28ef97-8380-44f5-8cbf-6e176b19a355)
 
 **Rust Rewrite - New Version (Zebar V2):**
-![image](https://github.com/user-attachments/assets/0387cb52-b4ce-49d2-b8e8-397e6041da46)
+![image](https://github.com/user-attachments/assets/36263e26-3018-43b0-8491-a8ec78d4504e)
 
 
 Pro / Nerd Level configuration for which I have spent a lot of time. Hope its awesome to use !!
