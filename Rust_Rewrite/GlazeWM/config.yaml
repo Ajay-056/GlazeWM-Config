@@ -1,14 +1,14 @@
 general:
   # Commands to run when the WM has started (e.g. to run a script or launch
   # another application). Here we are running a batch script to start Zebar.
-  startup_commands:
-    [
-      "shell-exec zebar"
-    ]
+  startup_commands: [ ]
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
-  shutdown_commands: []
+  shutdown_commands: [ ]
+
+  # Commands to run after the WM config is reloaded.
+  config_reload_commands: []
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: true
@@ -35,7 +35,7 @@ gaps:
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: "43px"
+    top: "54px"
     right: "0px"
     bottom: "0px"
     left: "0px"
@@ -111,7 +111,7 @@ workspaces:
     # display_name: "  Spotify"
   - name: "6"
     display_name: "󰨞 Code"
-    #keep_alive: true
+    # keep_alive: true
   - name: "7"
     display_name: "🗿"
   - name: "8"
@@ -153,7 +153,7 @@ window_rules:
 
   - commands: ["move --workspace 2", "focus --workspace 2"]
     match:
-      - window_process: { equals: "WindowsTerminal" }
+      - window_process: { equals: "" }
 
   - commands: ["move --workspace 3", "focus --workspace 3"]
     match:
@@ -161,20 +161,20 @@ window_rules:
 
   - commands: ["move --workspace 4", "focus --workspace 4"]
     match:
-      - window_process: { equals: "explorer" }
+      - window_process: { equals: "" }
 
   - commands: ["move --workspace 5", "focus --workspace 5"]
     match:
-      - window_process: { equals: "Spotify" }
+      - window_process: { equals: "" }
 
   - commands: ["move --workspace 6", "focus --workspace 6"]
     match:
-      - window_process: { equals: "Code" }
+      - window_process: { equals: "" }
 
   - commands: ["move --workspace 7", "focus --workspace 7"]
     match:
-      - window_title: { equals: "Settings" }
-      - window_title: { equals: "Microsoft Store" }
+      - window_title: { equals: "" }
+      - window_title: { equals: "" }
       - window_title: { equals: "" }
 
 binding_modes:

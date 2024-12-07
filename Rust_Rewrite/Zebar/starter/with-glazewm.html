@@ -15,10 +15,10 @@
 
     <!-- Allows React to be run buildless via "text/babel" script below. -->
     <script
-      src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js"
-      integrity="sha256-aS0B0wnsaDByLfE16h4MDCP1fQFccysd1YWOcV+gbBo="
-      crossorigin="anonymous"
-    ></script>
+        src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js"
+        integrity="sha256-aS0B0wnsaDByLfE16h4MDCP1fQFccysd1YWOcV+gbBo="
+        crossorigin="anonymous"
+        ></script>
   </head>
   <body>
     <div id="root"></div>
@@ -41,7 +41,8 @@
         weather: { type: 'weather' },
         host: { type: 'host', refreshInterval: '5000'},
         ip: { type: 'ip' },
-        
+        disk: { type: 'disk', refreshInterval: '15000' },
+        audio: { type: 'audio' }
       });
 
       createRoot(document.getElementById('root')).render(<App />);
@@ -195,18 +196,44 @@
 
               {output.network && (
                 <div className="network">
-                  {getNetworkIcon(output.network)}&nbsp;
-                  {(output.network.traffic.transmitted.iecValue).toFixed(1)}
-                  {output.network.traffic.transmitted.iecUnit}
-                  /
-                  {(output.network.traffic.received.iecValue).toFixed(1)}
-                  {output.network.traffic.received.iecUnit}
-
+                  {getNetworkIcon(output.network)}
                 </div>
               )}
 
+
+              {output.audio && (
+                <div className="volume"><button className="btn" onClick={() => { output.audio.setVolume(output.audio.defaultPlaybackDevice.volume + 5)}}><span className="nf-md-volume_plus"></span></button></div>
+              )}
+
+              {output.audio && (
+                <div className="audio">
+                  {output.audio.defaultPlaybackDevice.volume}
+                </div>
+              )}
+
+              {output.audio && (
+                <div className="volume"><button className="btn" onClick={() => { output.audio.setVolume(output.audio.defaultPlaybackDevice.volume - 5)}}><span className="nf-md-volume_minus"></span></button></div>
+              )}
+
+              {output.network && (
+                <div className="stack-nw-speed">
+                  <div>
+                  <span className="nf-oct-upload"></span>&nbsp;
+                  {(output.network.traffic.transmitted.iecValue).toFixed(1)}
+                  {output.network.traffic.transmitted.iecUnit}
+                  </div>
+
+                  <div>
+                  <span className="nf-oct-download"></span>&nbsp;
+                  {(output.network.traffic.received.iecValue).toFixed(1)}
+                  {output.network.traffic.received.iecUnit}
+                  </div>
+                  </div>
+              )}
+
+              <div className="stack">
               {output.cpu && (
-                <div className="cpu">
+                <div className="cpu1">
                   <i className="nf nf-oct-cpu"></i>
 
                   {/* Change the text color if the CPU usage is high. */}
@@ -219,7 +246,7 @@
               )}
 
               {output.memory && (
-                <div className="memory">
+                <div className="memory1">
                 <button className="btn1" onClick={() => { output.glazewm.runCommand('shell-exec %userprofile%/.glzr/zebar/script/OpenTaskManager.vbs')
           }}>
                   <i className="nf nf-fae-chip"></i>
@@ -231,9 +258,11 @@
                   </button>
                 </div>
               )}
+              </div>
 
+              <div className="stack">
               {output.battery && (
-                <div className="battery">
+                <div className="battery1">
                   {/* Show icon for whether battery is charging. */}
                   {output.battery.isCharging && (
                     <i className="nf nf-md-power_plug charging-icon red"></i>
@@ -245,19 +274,27 @@
 
 
               {output.battery && (
-                <div className="cycle_count">
-                <i className="nf-md-repeat"></i>
+                <div className="cycle_count1">
+                <span className="nf-md-repeat"></span>&nbsp;
                   {output.battery.cycleCount}
                 </div> 
               )}
+              </div>
 
-
+              <div className="stack">
               {output.host && (
-                <div className="uptime">
+                <div className="uptime1">
                   {msToTime(output.host.uptime)}
                 </div> 
               )}
 
+              {output.disk && (
+                <div className="disk">
+                    {(output.disk.disks[0].availableSpace.iecValue).toFixed(1)}
+                    {output.disk.disks[0].availableSpace.iecUnit}
+                </div> 
+              )}
+              </div>
 
             </div>
           </div>

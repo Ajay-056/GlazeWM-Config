@@ -66,6 +66,7 @@ body,
 .tiling-direction,
 .network,
 .memory,
+.volume,
 .cpu,
 .cycle_count,
 .battery {
@@ -86,6 +87,20 @@ body,
   justify-content: space-between;
   border-radius: 30px;
 }
+
+.audio {
+ color: cyan;
+}
+
+.volume {
+  background: rgb(255 255 255 / 7%);
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+}
+
 
 .btn{
   border: none;
@@ -161,6 +176,36 @@ body,
   color: #1e90ff;
 }
 
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255 255 255 / 7%);
+  border-radius: 10px;
+  padding: 0px 8px;
+  font-size:12px;
+  margin-right:5px;
+}
+
+
+.stack-nw-speed {
+  display: flex;
+  width: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255 255 255 / 7%);
+  border-radius: 10px;
+  padding: 0px 8px;
+  font-size:12px;
+  margin-right:5px;
+}
+
+.cpu1 {
+  color: #1e90ff;
+}
+
 .cpu .high-usage {
   color: #900029;
   animation: flash 0.5s infinite;
@@ -188,11 +233,11 @@ body,
   color: rgb(255, 60, 0);
 }
 
-.cycle_count {
-  color: lightgreen;
+.cycle_count1 {
+  color: yellowgreen;
 }
 
-.uptime {
+.uptime1 {
   color: yellow;
 }
 
