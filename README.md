@@ -7,7 +7,7 @@
 ![image](https://github.com/user-attachments/assets/36263e26-3018-43b0-8491-a8ec78d4504e)
 
 
-Pro / Nerd Level configuration for which I have spent a lot of time. Hope its awesome to use !!
+Pro / Nerd Level configuration for which I have spent a lot of time. Hope its awesome to use !! Will update new feats ASAP.
 
 Take a look at my other configs and dots below
 
@@ -23,3 +23,4 @@ Take a look at my other configs and dots below
 - Add custom scripts like VBS,PS1 etc in zebar to make the life more easier (I personally have added VBS for, click memory icon to open task manager & to open calendar by clicking time)
 - Use GlazeWM alongside Powertoys Run (To mimic like dmenu or rofi) <https://github.com/microsoft/PowerToys>
 - Use Explorer Tab Utility to merge new file explorer windows as new tab in existing window to avoid clutter <https://github.com/w4po/ExplorerTabUtility>
+- size will best fit for 14 inch screens
