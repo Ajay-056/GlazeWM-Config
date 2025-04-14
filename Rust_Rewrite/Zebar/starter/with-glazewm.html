@@ -32,16 +32,16 @@
       import * as zebar from 'https://esm.sh/zebar@2';
 
       const providers = zebar.createProviderGroup({
-        network: { type: 'network', refreshInterval: '2000'},
+        network: { type: 'network', refreshInterval: '10000'},
         glazewm: { type: 'glazewm' },
         cpu: { type: 'cpu', refreshInterval: '2000' },
         date: { type: 'date', formatting: 'EEE	dd MMM hh:mm:ss a' },
-        battery: { type: 'battery', refreshInterval: '2000'},
+        battery: { type: 'battery', refreshInterval: '20000'},
         memory: { type: 'memory', refreshInterval: '2000'},
         weather: { type: 'weather' },
-        host: { type: 'host', refreshInterval: '5000'},
+        host: { type: 'host', refreshInterval: '60000'},
         ip: { type: 'ip' },
-        disk: { type: 'disk', refreshInterval: '15000' },
+        disk: { type: 'disk', refreshInterval: '35000' },
         audio: { type: 'audio' }
       });
 
@@ -275,8 +275,10 @@
 
               {output.battery && (
                 <div className="cycle_count1">
+                <button className="btn1" onClick={() => { output.glazewm.runCommand('shell-exec %userprofile%/Desktop/AHK/AHK_GWM.ahk') }}>
                 <span className="nf-md-repeat"></span>&nbsp;
                   {output.battery.cycleCount}
+                </button>
                 </div> 
               )}
               </div>
