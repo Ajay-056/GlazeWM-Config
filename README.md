@@ -39,5 +39,5 @@ Take a look at my other configs and dots below
 - Use a Nerd Font to ensure all the icons and glyphs render properly. Download your favourite font from here <https://www.nerdfonts.com/font-downloads>.
 - Hide Your Task bar to freeup some unwanted space since taskbar is replaced by glaze WM bar / Zebar.
 - Add custom scripts like VBS,PS1,AHK etc in zebar to make the life more easier (Refer to zebar features section for more details)
-- Use GlazeWM alongside Powertoys Run / Flow Launcher (To mimic like dmenu or rofi)
+- Use GlazeWM alongside any application launchers like Powertoys Run / Flow Launcher (To mimic like dmenu or rofi)
 - Use Explorer Tab Utility to merge new file explorer windows as new tab in existing window to avoid clutter <https://github.com/w4po/ExplorerTabUtility>
