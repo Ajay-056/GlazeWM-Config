@@ -36,10 +36,6 @@ winget install --id AmN.yasb
 **Old Version:**
 ![image](https://github.com/Ajay-056/Glaze-WM-Config/assets/40629789/df28ef97-8380-44f5-8cbf-6e176b19a355)
 
-Take a look at my other configs and dots below
-- <https://github.com/Ajay-056/My-Dot-Files>
-- <https://github.com/Ajay-056/Obsidian-Config>
-
 **Pro-tips:**
 
 - Run Glaze WM as administrator to make sure all the features are enabled without any issues.
@@ -49,3 +45,7 @@ Take a look at my other configs and dots below
 - Add custom scripts like VBS,PS1,AHK etc in zebar to make the life more easier (Refer to zebar features section for more details)
 - Use GlazeWM alongside any application launchers like [Powertoys Run](https://github.com/microsoft/PowerToys) / [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher) To mimic like dmenu or rofi.
 - Use [Explorer Tab Utility](https://github.com/w4po/ExplorerTabUtility) to merge new file explorer windows as new tab in existing window to avoid clutter.
+
+Take a look at my other configs and dots below
+- <https://github.com/Ajay-056/My-Dot-Files>
+- <https://github.com/Ajay-056/Obsidian-Config>
