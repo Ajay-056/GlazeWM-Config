@@ -6,6 +6,9 @@
 **Rust Rewrite - New Version (Zebar V2):**
 ![image](https://github.com/user-attachments/assets/36263e26-3018-43b0-8491-a8ec78d4504e)
 
+**YASB Bar**
+![image](https://github.com/user-attachments/assets/7c98ce97-b6a8-4e33-8597-75fa690066ef)
+
 Pro / Nerd Level configuration for which I have spent a lot of time. Hope its awesome to use !! Will update new feats ASAP.
 
 <details>
