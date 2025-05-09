@@ -9,6 +9,12 @@
 **YASB Bar**
 ![image](https://github.com/user-attachments/assets/7c98ce97-b6a8-4e33-8597-75fa690066ef)
 
+### Winget
+Install the YASB using Winget install
+```powershell
+winget install --id AmN.yasb
+```
+
 Pro / Nerd Level configuration for which I have spent a lot of time. Hope its awesome to use !! Will update new feats ASAP.
 
 <details>
