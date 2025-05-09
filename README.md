@@ -1,21 +1,18 @@
 # Glaze-WM-Config (⭐Star the Repository if you like or clone it 😃)
 
-**Old Version:**
-![image](https://github.com/Ajay-056/Glaze-WM-Config/assets/40629789/df28ef97-8380-44f5-8cbf-6e176b19a355)
+Pro / Nerd Level configuration for which I have spent a lot of time. Hope its awesome to use !! Will update new feats ASAP.
 
-**Rust Rewrite - New Version (Zebar V2):**
-![image](https://github.com/user-attachments/assets/36263e26-3018-43b0-8491-a8ec78d4504e)
+*[YASB Bar](https://github.com/amnweb/yasb)*
 
-**YASB Bar**
 ![image](https://github.com/user-attachments/assets/7c98ce97-b6a8-4e33-8597-75fa690066ef)
 
-### Winget
 Install the YASB using Winget install
 ```powershell
 winget install --id AmN.yasb
 ```
 
-Pro / Nerd Level configuration for which I have spent a lot of time. Hope its awesome to use !! Will update new feats ASAP.
+**Rust Rewrite - New Version (Zebar V2):**
+![image](https://github.com/user-attachments/assets/36263e26-3018-43b0-8491-a8ec78d4504e)
 
 <details>
   <summary>Zebar Features (Click to expand)</summary>
@@ -36,8 +33,10 @@ Pro / Nerd Level configuration for which I have spent a lot of time. Hope its aw
   - Other bubble (System uptime and Drive utilization [configurable])
 </details>
 
-Take a look at my other configs and dots below
+**Old Version:**
+![image](https://github.com/Ajay-056/Glaze-WM-Config/assets/40629789/df28ef97-8380-44f5-8cbf-6e176b19a355)
 
+Take a look at my other configs and dots below
 - <https://github.com/Ajay-056/My-Dot-Files>
 - <https://github.com/Ajay-056/Obsidian-Config>
 
@@ -45,8 +44,8 @@ Take a look at my other configs and dots below
 
 - Run Glaze WM as administrator to make sure all the features are enabled without any issues.
 - Use shell:startup / Task Scheduler to run the executable automatically at the login.
-- Use a Nerd Font to ensure all the icons and glyphs render properly. Download your favourite font from here <https://www.nerdfonts.com/font-downloads>.
+- Use a [Nerd Font](https://www.nerdfonts.com/font-downloads) to ensure all the icons and glyphs render properly. Download your favourite font from here.
 - Hide Your Task bar to freeup some unwanted space since taskbar is replaced by glaze WM bar / Zebar.
 - Add custom scripts like VBS,PS1,AHK etc in zebar to make the life more easier (Refer to zebar features section for more details)
-- Use GlazeWM alongside any application launchers like Powertoys Run / Flow Launcher (To mimic like dmenu or rofi)
-- Use Explorer Tab Utility to merge new file explorer windows as new tab in existing window to avoid clutter <https://github.com/w4po/ExplorerTabUtility>
+- Use GlazeWM alongside any application launchers like [Powertoys Run](https://github.com/microsoft/PowerToys) / [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher) To mimic like dmenu or rofi.
+- Use [Explorer Tab Utility](https://github.com/w4po/ExplorerTabUtility) to merge new file explorer windows as new tab in existing window to avoid clutter.
