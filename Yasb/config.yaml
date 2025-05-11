@@ -2,9 +2,9 @@ watch_stylesheet: true
 watch_config: true
 debug: false
 komorebi:
-  start_command: "komorebic start --whkd"
-  stop_command: "komorebic stop --whkd"
-  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+#   start_command: "komorebic start --whkd"
+#   stop_command: "komorebic stop --whkd"
+#   reload_command: "komorebic stop --whkd && komorebic start --whkd"
 bars:
   primary-bar:
     enabled: true
@@ -18,7 +18,7 @@ bars:
       acrylic: true 
       dark_mode: true
       round_corners: true
-      border_color: lightgreen
+      border_color: '#8bff33'
     window_flags:
       always_on_top: false
       windows_app_bar: true
@@ -34,6 +34,7 @@ bars:
       left: [
           "home", 
           "glazewm_workspaces", 
+          # "active_window"
       ]
       center: [
           "clock",
@@ -45,7 +46,6 @@ bars:
           # "traffic",
           "wifi",
           "volume",
-          # "brightness",
           "bluetooth",
           "battery",
           "update_check",
@@ -67,8 +67,8 @@ widgets:
       power_menu: false
       blur: true
       round_corners: true
-      round_corners_type: "small"
-      border_color: "#7aa2f7"
+      round_corners_type: "normal"
+      border_color: "#DAF7A6"
       alignment: "left"
       offset_left: 4
       offset_top: 0
@@ -97,7 +97,8 @@ widgets:
           blur: true
           round_corners: true
           round_corners_type: "small"
-          border_color: '#7aa2f7'
+          # border_color: '#7aa2f7'
+          border_color: '#DAF7A6'
           alignment: 'center'
           offset_top: 0
         callbacks:
@@ -110,7 +111,7 @@ widgets:
       label_no_window: ""
       label_icon: true
       label_icon_size: 14
-      max_length: 50
+      max_length: 25
       max_length_ellipsis: "..."
       monitor_exclusive: true
   clock:
@@ -122,7 +123,7 @@ widgets:
       calendar:
         round_corners: true
         round_corners_type: "small"
-        border_color: "#7aa2f7"
+        border_color: "#DAF7A6"
         alignment: "center"
         offset_top: 0
   weather:
@@ -152,7 +153,7 @@ widgets:
         blur: true
         round_corners: true
         round_corners_type: "small"
-        border_color: "#7aa2f7"
+        border_color: "#DAF7A6"
         alignment: "center"
         direction: "down"
         offset_top: 0
@@ -192,7 +193,7 @@ widgets:
         blur: true
         round_corners: true
         round_corners_type: "small"
-        border_color: "#7aa2f7"
+        border_color: "#DAF7A6"
         alignment: "center"
         direction: "down"
         offset_top: 0
@@ -298,7 +299,6 @@ widgets:
       update_interval: 1000
       callbacks:
         on_left: "toggle_label"
-        on_right: "exec cmd /c Taskmgr"
       label_shadow:
         enabled: true
         color: "black"

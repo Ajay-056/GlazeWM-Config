@@ -210,7 +210,7 @@
 
 .clock-widget .label {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--subtext0);
 }
 
@@ -267,6 +267,11 @@
 
 .weather-card {
     background-color: var(--mantle);
+}
+
+.active-window-widget .widget-container .label {
+    color: white;
+    font-weight: 900;
 }
 
 .glazewm-workspaces {
@@ -345,7 +350,7 @@
 }
 
 .home-menu .menu-item:hover {
-    background-color: var(--lavender);
+    background-color: "#DAF7A6";
     color: var(--surface0);
     margin: 4px 6px;
     border-radius: 4px;
