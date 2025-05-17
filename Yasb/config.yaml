@@ -24,7 +24,7 @@ bars:
       windows_app_bar: true
     dimensions:
       width: "100%"
-      height: 32
+      height: 36
     padding:
       top: 4
       left: 3
@@ -48,6 +48,7 @@ bars:
           "volume",
           "bluetooth",
           "battery",
+          "notifications",
           "update_check",
           "power_menu"
 
@@ -317,6 +318,27 @@ widgets:
         label: "<span>\uf0ab</span> {count}"
         interval: 3600
         exclude: []
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\uf476</span> {count}"
+      label_alt: "{count} notifications"
+      hide_empty: true
+      tooltip: false
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "do_nothing"
+        on_middle: "toggle_label"
+      container_padding:
+        top: 0
+        left: 8
+        bottom: 0
+        right: 8
       label_shadow:
         enabled: true
         color: "black"

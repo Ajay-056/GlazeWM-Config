@@ -196,8 +196,8 @@
 .clock-widget {
     background-color: var(--crust);
     padding: 0 6px;
-    margin: 4px 0;
     border-radius: 12px;
+    max-height: 24px;
     border: 0;
 }
 
@@ -207,7 +207,7 @@
 }
 
 .clock-widget .label {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 800;
     color: var(--subtext0);
 }
@@ -251,7 +251,7 @@
 }
 
 .calendar .date-label {
-    font-size: 88px;
+    font-size: 78px;
     font-weight: 900;
     color: rgb(255, 255, 255);
     margin-top: -20px;
@@ -281,8 +281,9 @@
 }
 
 .glazewm-workspaces .ws-btn {
-    padding: 4px 6px;
     margin-right: 12px;
+    padding: 0 6px;
+    max-height: 22px;
     color: white;
     border: none;
     border-radius: 12px;
@@ -290,11 +291,11 @@
     font-size: 12px;
 }
 
-.glazewm-workspaces .ws-btn.active {
+.glazewm-workspaces .ws-btn.active_populated {
     color: black;
-    background-color: yellow;
+    background: yellow;
     border: 1px solid red;
-    font-weight: 900;
+    border-radius: 12px;
 }
 
 .glazewm-workspaces .ws-btn.populated {
