@@ -4,7 +4,7 @@ Pro / Nerd Level configuration for which I have spent a lot of time. Hope its aw
 
 *[YASB Bar](https://github.com/amnweb/yasb)*
 
-![image](https://github.com/user-attachments/assets/7c98ce97-b6a8-4e33-8597-75fa690066ef)
+![image](https://github.com/user-attachments/assets/1ed3152d-d113-4260-954a-be0a0679fd74)
 
 Install the YASB using Winget install
 ```powershell
