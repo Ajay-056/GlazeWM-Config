@@ -39,6 +39,12 @@ gaps:
     right: "0px"
     bottom: "0px"
     left: "0px"
+  
+  single_window_outer_gap:
+    top: '80px'
+    right: '15%'
+    bottom: '40px'
+    left: '15%'
 
 window_effects:
   # Visual effects to apply to the focused window.
