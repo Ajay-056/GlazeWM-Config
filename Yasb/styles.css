@@ -209,7 +209,8 @@
 .clock-widget .label {
     font-size: 12px;
     font-weight: 800;
-    color: var(--subtext0);
+    color: white;
+    /* color: var(--subtext0); */
 }
 
 .calendar {
@@ -272,6 +273,21 @@
     font-weight: 900;
 }
 
+
+.glazewm-tiling-direction {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.glazewm-tiling-direction .btn {
+    font-size: 18px;
+    width: 14px;
+    padding: 0 4px 0 4px;
+    color: #CDD6F4;
+    border: none;
+}
+
 .glazewm-workspaces {
     display: flex;
     align-items: center;
@@ -293,9 +309,18 @@
 
 .glazewm-workspaces .ws-btn.active_populated {
     color: black;
-    background: yellow;
-    border: 1px solid red;
-    border-radius: 12px;
+    /* background: #52b788; */
+    background: var(--green);
+    border-radius: 10px;
+    font-weight: 800;
+}
+
+
+.glazewm-workspaces .ws-btn.active_empty {
+    color: black;
+    background: var(--green);
+    border-radius: 10px;
+    font-weight: 800;
 }
 
 .glazewm-workspaces .ws-btn.populated {

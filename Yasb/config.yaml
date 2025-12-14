@@ -18,7 +18,8 @@ bars:
       acrylic: true 
       dark_mode: true
       round_corners: true
-      border_color: '#8bff33'
+      border_color: '#a6e3a1'
+      # border_color: '#8bff33'
     window_flags:
       always_on_top: false
       windows_app_bar: true
@@ -40,11 +41,15 @@ bars:
           "clock",
         ]
       right: [
+          # "systeminfo-grouper",
+        # "glazewm_tiling_direction",
+          "glazewm_binding_mode",
           "cpu",
           "memory",
           "disk",
           # "traffic",
           "wifi",
+          # "traffic",
           "volume",
           "bluetooth",
           "battery",
@@ -73,12 +78,54 @@ widgets:
       alignment: "left"
       offset_left: 4
       offset_top: 0
+
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
       offline_label: "GWM Offline"
       hide_empty_workspaces: true
-      hide_if_offline: false
+      hide_if_offline: true
+      # app_icons: 
+      #   enabled_populated: false
+      #   enabled_active: true
+      #   size: 14
+      #   max_icons: 0
+      #   hide_label: true
+      #   hide_duplicates: false
+      #   hide_floating: false
+
+  glazewm_tiling_direction:
+    type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
+    options:
+      horizontal_label: "\udb81\udce1"
+      vertical_label: "\udb81\udce2"
+      btn_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+  glazewm_binding_mode:
+    type: "glazewm.binding_mode.GlazewmBindingModeWidget"
+    options:
+      hide_if_no_active: true
+      label_if_no_active: "NBM"
+      default_icon: "\uf071"
+      icons: 
+        none: ""
+        resize: "\uf071"
+        pause: "\uf28c"
+      binding_modes_to_cycle_through: [
+        "none", # none handles if no binding mode is active
+        "resize",
+        "pause"
+      ]
+      callbacks:
+        on_left: "next_binding_mode"
+        on_middle: "toggle_label"
+        on_right: "disable_binding_mode"
+
+    # By default binding mode names are fetched from GlazeWM and "display_name" option takes priority over "name".
+
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -87,11 +134,29 @@ widgets:
       update_interval: 10000
       callbacks:
         on_right: "exec cmd /c Taskmgr"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+      hide_decimal: true
+      memory_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      # progress_bar:
+      #   enabled: true
+      #   position: right
+      #   size: 16
+      #   thickness: 3
+
   disk:
     type: "yasb.disk.DiskWidget"
     options:
         label: "<span>\uf473</span>"
         label_alt: "<span>\uf473</span>"
+        decimal_display: 0
+        update_interval: 120
         group_label:
           volume_labels: ["C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
           show_label_name: false 
@@ -104,6 +169,11 @@ widgets:
           offset_top: 0
         callbacks:
           on_left: "toggle_group"
+        disk_thresholds:
+          low: 25
+          medium: 50
+          high: 90
+
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -115,6 +185,24 @@ widgets:
       max_length: 25
       max_length_ellipsis: "..."
       monitor_exclusive: true
+
+
+  systeminfo-grouper:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "systeminfo-grouper"
+      widgets: [
+        "memory",
+        "disk",
+        "cpu"
+      ]
+      collapse_options:
+        enabled: true
+        exclude_widgets: ["battery"]  # Battery widget stays visible when collapsed
+        expanded_label: "\uf054"
+        collapsed_label: "\uf053"
+        label_position: "right"
+
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -127,6 +215,14 @@ widgets:
         border_color: "#DAF7A6"
         alignment: "center"
         offset_top: 0
+        show_holidays: true
+        show_week_numbers: true
+        extended: false
+      alarm_icons:
+        enabled: "\uf0f3"
+        disabled: "\uf0a2"
+        snooze: "\uf1f6"
+
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -159,6 +255,7 @@ widgets:
         direction: "down"
         offset_top: 0
         icon_size: 48
+
   wifi:
     type: "yasb.wifi.WifiWidget"
     options:
@@ -169,9 +266,9 @@ widgets:
       ethernet_icon: "\uf108"
       update_interval: 5000
       callbacks:
-        on_left: "exec quick_settings"
+        on_left: "do_nothing"
         on_middle: "do_nothing"
-        on_right: "toggle_label"
+        on_right: "exec cmd.exe /c start ms-settings:network"
       wifi_icons: [
         "\udb82\udd2e",  # Icon for 0% strength
         "\udb82\udd1f",  # Icon for 1-20% strength
@@ -179,6 +276,52 @@ widgets:
         "\udb82\udd25",  # Icon for 41-80% strength
         "\udb82\udd28"   # Icon for 81-100% strength
       ]
+      menu_config:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        wifi_icons_secured: [
+          "\ue670",
+          "\ue671",
+          "\ue672",
+          "\ue673",
+        ]
+        wifi_icons_unsecured: [
+          "\uec3c",
+          "\uec3d",
+          "\uec3e",
+          "\uec3f",
+        ]
+
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "\ueb01 \ueab4 {download_speed} | \ueab7 {upload_speed}"
+      label_alt: "Download {download_speed} | Upload {upload_speed}"
+      update_interval: 1000
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "left"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+        on_right: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
@@ -198,16 +341,42 @@ widgets:
         alignment: "center"
         direction: "down"
         offset_top: 0
+        show_apps: true # Whether to show the list of applications with audio sessions
+        show_app_labels: false # Whether to show application labels in the audio menu
+        show_app_icons: true # Whether to show application icons in the audio menu
+        show_apps_expanded: false # Whether application volumes are expanded by default when opening the menu
+        app_icons: # Icons for the toggle button to expand/collapse application volumes
+          toggle_down: "\uf078" # Icon for btn collapsed state
+          toggle_up: "\uf077" # Icon for btn expanded state
       callbacks:
         on_right: "toggle_mute"
+
   battery:
     type: "yasb.battery.BatteryWidget"
     options:
       label: "<span>{icon}</span>{percent}%"
       label_alt: "<span>{icon}</span> {percent}% | time: {time_remaining}"
-      #hide_unsupported: true
+      hide_unsupported: true
+      time_remaining_natural: False
+      update_interval: 5000
       charging_options:
         icon_format: "{charging_icon}" 
+        blink_charging_icon: true
+        blink_interval: 500
+      status_thresholds:
+        critical: 10
+        low: 25
+        medium: 75
+        high: 95
+        full: 100
+      status_icons:
+        icon_charging: "\uf0e7"
+        icon_critical: "\uf244"
+        icon_low: "\uf243"
+        icon_medium: "\uf242"
+        icon_high: "\uf241"
+        icon_full: "\uf240"
+
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -229,6 +398,10 @@ widgets:
      options:
        label: "<span>{icon}</span>"
        label_alt: "{device_name}"
+       label_no_device: "NDC"
+       label_device_separator: ", "
+       max_length: 10
+       max_length_ellipsis: "..."
        icons: 
          bluetooth_on: "\udb80\udcaf"
          bluetooth_off: "\udb80\udcb2"
@@ -285,6 +458,10 @@ widgets:
       label: "<span>\uf4bc</span> {info[percent][total]}%"
       label_alt: "<span>\uf437</span> {info[histograms][cpu_percent]}"
       update_interval: 1000
+      cpu_thresholds:
+        low: 25
+        medium: 50
+        high: 90
       callbacks:
         on_left: "exec cmd /c Taskmgr"
       label_shadow:
@@ -292,19 +469,13 @@ widgets:
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
-  traffic:
-    type: "yasb.traffic.TrafficWidget"
-    options:
-      label: "\ueb01 \ueab4 {download_speed} | \ueab7 {upload_speed}"
-      label_alt: "Download {download_speed} | Upload {upload_speed}"
-      update_interval: 1000
-      callbacks:
-        on_left: "toggle_label"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
+      hide_decimal: true
+      # progress_bar:
+      #   enabled: true
+      #   position: right
+      #   size: 16
+      #   thickness: 3
+
   update_check:
     type: "yasb.update_check.UpdateCheckWidget"
     options:
@@ -332,7 +503,7 @@ widgets:
       tooltip: false
       callbacks:
         on_left: "toggle_notification"
-        on_right: "do_nothing"
+        on_right: "clear_notifications"
         on_middle: "toggle_label"
       container_padding:
         top: 0
