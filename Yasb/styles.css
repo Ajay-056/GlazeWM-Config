@@ -340,6 +340,23 @@
     color: var(--mauve);
 }
 
+.memory-widget .label.status-low {
+    color: var(--subtext0);
+}
+
+
+.memory-widget .label.status-medium {
+    color: orange;
+}
+
+.memory-widget .label.status-high {
+    color: brown;
+}
+
+.memory-widget .label.status-critical {
+    color: red;
+}
+
 .cpu-widget .icon {
     color: var(--blue);
 }

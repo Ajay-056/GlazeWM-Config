@@ -44,17 +44,16 @@ bars:
           # "systeminfo-grouper",
         # "glazewm_tiling_direction",
           "glazewm_binding_mode",
-          "cpu",
+          # "cpu",
           "memory",
           "disk",
-          # "traffic",
           "wifi",
           # "traffic",
           "volume",
           "bluetooth",
           "battery",
           "notifications",
-          "update_check",
+          # "update_check",
           "power_menu"
 
       ]
@@ -104,6 +103,7 @@ widgets:
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
+
   glazewm_binding_mode:
     type: "glazewm.binding_mode.GlazewmBindingModeWidget"
     options:
@@ -156,7 +156,7 @@ widgets:
         label: "<span>\uf473</span>"
         label_alt: "<span>\uf473</span>"
         decimal_display: 0
-        update_interval: 120
+        update_interval: 60
         group_label:
           volume_labels: ["C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
           show_label_name: false 
@@ -182,7 +182,7 @@ widgets:
       label_no_window: ""
       label_icon: true
       label_icon_size: 14
-      max_length: 25
+      max_length: 50
       max_length_ellipsis: "..."
       monitor_exclusive: true
 
@@ -223,38 +223,6 @@ widgets:
         disabled: "\uf0a2"
         snooze: "\uf1f6"
 
-  weather:
-    type: "yasb.weather.WeatherWidget"
-    options:
-      label: "<span>{icon}</span> {temp}"
-      label_alt: "{location}: {conditions}, Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: '24b6c2cda6d84066b0304531241908'
-      update_interval: 600
-      hide_decimal: true
-      location: "Hungary, Eger"
-      units: "metric"
-      callbacks:
-        on_left: "toggle_card"
-      icons:
-        sunnyDay: "\udb81\udd99"
-        clearNight: "\ue3c2"
-        cloudyDay: "\ue21d"
-        cloudyNight: "\ue226"
-        rainyDay: "\ue371"
-        rainyNight: "\ue371"
-        snowyIcyDay: "\udb81\udf17"
-        snowyIcyNight: "\udb81\udf17"
-        blizzard: "\udb81\udd99"
-        default: "\udb81\udd99"
-      weather_card:
-        blur: true
-        round_corners: true
-        round_corners_type: "small"
-        border_color: "#DAF7A6"
-        alignment: "center"
-        direction: "down"
-        offset_top: 0
-        icon_size: 48
 
   wifi:
     type: "yasb.wifi.WifiWidget"
@@ -264,7 +232,7 @@ widgets:
       ethernet_label: "<span>{wifi_icon}</span>"
       ethernet_label_alt: "<span>{wifi_icon}</span> {wifi_name}"
       ethernet_icon: "\uf108"
-      update_interval: 5000
+      update_interval: 32000
       callbacks:
         on_left: "do_nothing"
         on_middle: "do_nothing"
@@ -358,11 +326,9 @@ widgets:
       label_alt: "<span>{icon}</span> {percent}% | time: {time_remaining}"
       hide_unsupported: true
       time_remaining_natural: False
-      update_interval: 5000
+      update_interval: 60000
       charging_options:
         icon_format: "{charging_icon}" 
-        blink_charging_icon: true
-        blink_interval: 500
       status_thresholds:
         critical: 10
         low: 25
@@ -482,12 +448,12 @@ widgets:
       windows_update:
         enabled: True
         label: "<span>\uf0ab</span> {count}"
-        interval: 3600
+        interval: 60
         exclude: []
       winget_update:
         enabled: True
         label: "<span>\uf0ab</span> {count}"
-        interval: 3600
+        interval: 60
         exclude: []
       label_shadow:
         enabled: true
