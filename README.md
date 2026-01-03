@@ -4,6 +4,7 @@ Pro / Nerd Level configuration for which I have spent a lot of time. Hope its aw
 
 *[YASB Bar](https://github.com/amnweb/yasb)*
 
+Catppuccin Mocha theme
 ![image](https://github.com/user-attachments/assets/1ed3152d-d113-4260-954a-be0a0679fd74)
 
 Install the YASB using Winget install
