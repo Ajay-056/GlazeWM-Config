@@ -12,6 +12,28 @@ Install the YASB using Winget install
 winget install --id AmN.yasb
 ```
 
+<details>
+  <summary>YASB Widgets (Click to expand)</summary>
+
+  **Left Panel**
+  - Home Quick access menu (Customizable)
+  - Clickable Named Workspaces For GlazeWM which shows the active & inactive workspaces.
+  
+  **Center Panel**
+  - Date time (when left clicked, will show a native YASB popup for calendar, when right clicked, will change the datetime format which is customizable in config)
+
+  **Right Panel**
+  - Resize (Hidden by default, will show on key binding press)
+  - Memory Utilization (Left click - will toggle between % mode & absolute value, Right click - will open task manager). Note I havent added CPU widget, since there are known issues in displaying the correct CPU utilization.
+  - Storage widget - When clicked will show the available drives with storage status, if a volume is clicked, will open it in file explorer.
+  - Current WIFI Status ICON, When right clicked, will open the windows network settings.
+  - Volume control - When left clicked, will open a menu for increase and decrease [overall & app level], When right clicked will toggle the mute mode.
+  - Current Bluetooth Status ICON - When left clicked, will show the name of connected device, When right clicked will open BT windows settings.
+  - Current Battery Status ICON
+  - Power Menu - Full screen popup menu for Shutdown, Restart, Signout, Hibernate, Sleep and Uptime.
+  
+</details>
+
 **Rust Rewrite - New Version (Zebar V2):**
 <br> Note: I prefer to use YASB, hence Im not maintaining Zebar config.<br>
 ![image](https://github.com/user-attachments/assets/36263e26-3018-43b0-8491-a8ec78d4504e)
