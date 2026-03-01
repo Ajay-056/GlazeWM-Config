@@ -67,7 +67,7 @@ winget install --id AmN.yasb
 - Use shell:startup / Task Scheduler to run the executable automatically at the login.
 - Use a [Nerd Font](https://www.nerdfonts.com/font-downloads) to ensure all the icons and glyphs render properly.
 - Hide Your Task bar to freeup some unwanted space since taskbar is replaced by Zebar / YASB.
-- Always be aware on what config option you are enabling, each has its part in resource usage. (My thumb rule, More Aesthetics = Resource intensive)
+- Always be aware on what config option you are enabling, each has its part in resource usage.
 - Use GlazeWM alongside any application launchers like [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher) / [Powertoys Run](https://github.com/microsoft/PowerToys) To mimic like dmenu or rofi.
 - Use [Explorer Tab Utility](https://github.com/w4po/ExplorerTabUtility) to merge new file explorer windows as new tab in existing window to avoid clutter (..and more).
 - If you choose Zebar, Add custom scripts like VBS,PS1,AHK etc in zebar to make the life more easier (Refer to zebar features section for more details)
